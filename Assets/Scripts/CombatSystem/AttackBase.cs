@@ -6,7 +6,8 @@ using UnityEngine.PlayerLoop;
 
 public abstract class AttackBase : MonoBehaviour
 {
-    public float damage;
+    public float minDamage;
+    public float maxDamage;
     public float attackSpeed;
     public float attackCooldown;
     private float _cooldownTime;

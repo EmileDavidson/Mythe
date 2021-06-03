@@ -1,7 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using UnityEditor;
 using UnityEngine;
 
 public class Slash : AttackBase
@@ -21,7 +19,7 @@ public class Slash : AttackBase
         foreach (GameObject enemy in enemies)
         {
             //wat willen we doen met de enemy gameobject.
-            enemy.GetComponent<Health>().RemoveHealth(damage);
+            enemy.GetComponent<Health>().RemoveHealth(Random.Range(minDamage, maxDamage));
         }
 
         // this.used = true;

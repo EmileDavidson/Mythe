@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Shader Graphs_Water_shader
+  m_Shader: {fileID: -6465566751694194690, guid: 2970c0fb5ac74d842a39874ff49145d6,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Main_water_:
+        m_Texture: {fileID: 2800000, guid: ad5abad7396bdf84e9e994bce5ae1501, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_8116949C:
+        m_Texture: {fileID: 2800000, guid: 906e4794d84ad9341befe803ec15a469, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - second_water_:
+        m_Texture: {fileID: 2800000, guid: ad5abad7396bdf84e9e994bce5ae1501, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Wave_height_: 0.03
+    - Wave_strangth_: 1
+    - depth_water: 5.29
+    - strangth_water: 2
+    m_Colors:
+    - Depth_Water_color: {r: 0.03470988, g: 0.5076404, b: 0.5660378, a: 0}
+    - Shallow_water_color: {r: 0.987924, g: 1, b: 0.75, a: 0}

@@ -16,7 +16,7 @@ public class Health : MonoBehaviour
     public UnityEvent<float> AddHealthEvent;
 
     public UnityEvent dieEvent;
-    private void Start()
+    private void Awake()
     {
         health = startHealth;
         if (maxHealth < startHealth) maxHealth = startHealth;
@@ -27,8 +27,9 @@ public class Health : MonoBehaviour
 
     public void RemoveHealth(float value)
     {
+        value = (int) value;
         RemoveHealthEvent?.Invoke(value);
-        
+
         float newHealth = health - value;
         if (newHealth <= 0) newHealth = 0;
         health = newHealth;
@@ -40,6 +41,7 @@ public class Health : MonoBehaviour
 
     public void AddHealth(float value)
     {
+        value = (int) value;
         AddHealthEvent.Invoke(value);
         
         float newHealth = health + value;

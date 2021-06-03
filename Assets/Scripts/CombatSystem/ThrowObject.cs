@@ -9,20 +9,17 @@ public class ThrowObject : MonoBehaviour
     private float _damage;
     private bool _destroyOnHit;
     private ParticleSystem _particleSystem;
-    [SerializeField] private LayerMask layer;
-
-    private void Start()
-    {
-        layer = LayerMask.NameToLayer("Enemy");
-    }
+    [SerializeField] private LayerMask layer = 8;
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("TRIGGER");
         Collided(other.gameObject);
     }
 
     private void OnCollisionEnter(Collision other)
     {
+        Debug.Log("COLLISION");
         Collided(other.gameObject);
     }
 
@@ -45,5 +42,10 @@ public class ThrowObject : MonoBehaviour
         this._damage = damage / 2;
         this._destroyOnHit = destroyOnHit;
         this._particleSystem = particleOnHit;
+    }
+
+    public void SetLayer(LayerMask lay)
+    {
+        this.layer = lay;
     }
 }

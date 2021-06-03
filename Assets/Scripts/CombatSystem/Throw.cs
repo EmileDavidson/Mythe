@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using TweenMachine;
 using UnityEngine;
-using UnityEngine.PlayerLoop;
-using UnityEngineInternal;
+using Random = UnityEngine.Random;
 
 public class Throw : AttackBase
 {
@@ -26,11 +23,13 @@ public class Throw : AttackBase
         GameObject obj = Instantiate(throwObject);
         Transform trans = throwFromLocation.transform;
         obj.transform.position = trans.position + (trans.forward * forwardOffset);
+        
+        //FIX OBJECT SCRIPT
         ThrowObject throwObjectComponent = obj.AddComponent<ThrowObject>();
-        throwObjectComponent.Instantiate(damage, true, null);
+        throwObjectComponent.Instantiate(Random.Range(minDamage, maxDamage), true, null);
 
         TweenBuild tweenBuild = new TweenBuild(obj);
-        Tween tweenPosition = tweenBuild.SetTweenPosition(throwFromLocation.position + (throwFromLocation.forward * maxDistance), .4f, EasingType.Linear);
+        Tween tweenPosition = tweenBuild.SetTweenPosition(throwFromLocation.position + (throwFromLocation.forward * maxDistance), speed, EasingType.Linear);
         
         tweenBuild.DestroyOnFinish = true;
         tweenBuild.StartTween();

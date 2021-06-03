@@ -8,6 +8,7 @@ using UnityEditor.PackageManager;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
 using Debug = UnityEngine.Debug;
+using Random = UnityEngine.Random;
 
 public class WindSlash : AttackBase
 {
@@ -36,8 +37,9 @@ public class WindSlash : AttackBase
          GameObject obj = Instantiate(objectToShoot);
          Transform trans = shootLocations[i].transform;
          obj.transform.position = trans.position;
+         
          ThrowObject throwObjectComponent = obj.AddComponent<ThrowObject>();
-         throwObjectComponent.Instantiate(damage, true, null);
+         throwObjectComponent.Instantiate(Random.Range(minDamage, maxDamage), true, null);
 
          TweenBuild tweenBuild = new TweenBuild(obj);
          Tween tweenPosition = tweenBuild.SetTweenPosition(shootLocations[i].position + (shootLocations[i].forward * maxDistance), .4f, EasingType.Linear);

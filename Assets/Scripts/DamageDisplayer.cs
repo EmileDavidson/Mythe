@@ -1,28 +1,36 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
+using TMPro;
 using UnityEngine;
 
 [RequireComponent(typeof(Health))]
 public class DamageDisplayer : MonoBehaviour
 {
     private Health _health;
-    private void Start()
+    [SerializeField] private GameObject floatingTextObject;
+    [SerializeField] private Canvas canvas;
+    [SerializeField] private Vector3 offset;
+    [SerializeField] private Camera lookCamera;
+    
+    // Start is called before the first frame update
+    void Start()
     {
-        //if there is a health script on this gameobject we acces it.
         _health = gameObject.GetComponent<Health>();
-        print(_health);
         _health.RemoveHealthEvent?.AddListener(TakeDamage);
-        _health.dieEvent?.AddListener(Die);
+        if (lookCamera == null) lookCamera = Camera.main;
     }
 
-    private void Die()
+    private void TakeDamage(float value)
     {
-        Destroy(this.gameObject);
-    }
+        if (value < 0) return;
+        GameObject go = Instantiate(floatingTextObject, transform.position, Quaternion.identity, canvas.transform);
 
-    private void TakeDamage(float amount)
-    {
-        //display logic
-        Debug.Log("DISPLAYING");
+        FloatingText fText = go.GetComponent<FloatingText>();
+        if (fText == null) fText = go.AddComponent<FloatingText>();
+        fText.offset = offset;
+        fText.lookAtTrans = lookCamera.transform;
+
+        go.GetComponent<TextMesh>().text = "" + value;
     }
 }
