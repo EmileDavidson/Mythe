@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6352899611118519821}
   - component: {fileID: 6352899611118519823}
   - component: {fileID: 6352899611118519822}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Slash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,8 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ef3ea89a96c7af4a951ceceb2b4e535, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minDamage: 0
-  maxDamage: 0
+  minDamage: 5
+  maxDamage: 10
   attackSpeed: 0
   attackCooldown: 0
   used: 0
@@ -79,7 +79,7 @@ GameObject:
   - component: {fileID: 6352899611222635982}
   - component: {fileID: 6352899611222635981}
   - component: {fileID: 6352899611222635980}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,8 +94,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6352899611222635978}
   m_LocalRotation: {x: -0.16594471, y: -0, z: -0, w: 0.98613507}
-  m_LocalPosition: {x: 0.46, y: -0.211, z: -0.256}
-  m_LocalScale: {x: 0.15045244, y: 0.1001217, z: 1.3091494}
+  m_LocalPosition: {x: 0.46, y: -0.172, z: -0.143}
+  m_LocalScale: {x: 0.15045244, y: 0.14, z: 1.74}
   m_Children: []
   m_Father: {fileID: 6352899611353457812}
   m_RootOrder: 1
@@ -170,7 +170,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6352899611307426787}
   - component: {fileID: 6352899611307426786}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Player 1
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -227,7 +227,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6352899611310296322}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Attacks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -266,13 +266,13 @@ GameObject:
   - component: {fileID: 6352899611353457813}
   - component: {fileID: 6352899611353457814}
   - component: {fileID: 6352899611353457815}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: momotaro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6352899611353457812
 Transform:
   m_ObjectHideFlags: 0
@@ -288,6 +288,7 @@ Transform:
   - {fileID: 6352899611222635979}
   - {fileID: 6352899611310296322}
   - {fileID: 6572691110792537312}
+  - {fileID: 1146991621828310952}
   m_Father: {fileID: 6352899611307426787}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -450,7 +451,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6352899611442267850}
   - component: {fileID: 9068464805553114848}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GameObject (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -502,7 +503,7 @@ GameObject:
   - component: {fileID: 6352899611529880868}
   - component: {fileID: 6352899611529880869}
   - component: {fileID: 6352899611529880875}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Monkey
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -683,7 +684,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6352899611770972215}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Attacks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -715,7 +716,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6352899611837947736}
   - component: {fileID: 9068464806449965745}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GameObject (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -762,7 +763,7 @@ GameObject:
   - component: {fileID: 6352899611946778414}
   - component: {fileID: 6352899611946778413}
   - component: {fileID: 6352899611946778412}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -852,7 +853,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6352899612014185907}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Attacks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -884,7 +885,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6352899612064982417}
   - component: {fileID: 6352899612064982418}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: WindSlash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -945,7 +946,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6352899612079751190}
   - component: {fileID: 9068464805700868037}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GameObject (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -997,13 +998,13 @@ GameObject:
   - component: {fileID: 6352899612203008112}
   - component: {fileID: 6352899612203008113}
   - component: {fileID: 6352899612203008119}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Phasant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6352899612203008111
 Transform:
   m_ObjectHideFlags: 0
@@ -1179,7 +1180,7 @@ GameObject:
   - component: {fileID: 6352899612501012113}
   - component: {fileID: 6352899612501012114}
   - component: {fileID: 6352899612501012115}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Throw
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1246,7 +1247,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6352899612762458486}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: groundedChecker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1277,7 +1278,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6352899612973456673}
   - component: {fileID: 9068464806375487249}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1312,6 +1313,81 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxDistance: 0
   radius: 0.4
+--- !u!1001 &3101497933125457432
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 6352899611353457812}
+    m_Modifications:
+    - target: {fileID: 2332817089854736472, guid: ceb84d01937f5f744b229319b4a6a8cd,
+        type: 3}
+      propertyPath: m_Name
+      value: SwordPlaceholder
+      objectReference: {fileID: 0}
+    - target: {fileID: 2657217503262007728, guid: ceb84d01937f5f744b229319b4a6a8cd,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2657217503262007728, guid: ceb84d01937f5f744b229319b4a6a8cd,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.46861714
+      objectReference: {fileID: 0}
+    - target: {fileID: 2657217503262007728, guid: ceb84d01937f5f744b229319b4a6a8cd,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.17700195
+      objectReference: {fileID: 0}
+    - target: {fileID: 2657217503262007728, guid: ceb84d01937f5f744b229319b4a6a8cd,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.11232853
+      objectReference: {fileID: 0}
+    - target: {fileID: 2657217503262007728, guid: ceb84d01937f5f744b229319b4a6a8cd,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.10750464
+      objectReference: {fileID: 0}
+    - target: {fileID: 2657217503262007728, guid: ceb84d01937f5f744b229319b4a6a8cd,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.6751715
+      objectReference: {fileID: 0}
+    - target: {fileID: 2657217503262007728, guid: ceb84d01937f5f744b229319b4a6a8cd,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7187113
+      objectReference: {fileID: 0}
+    - target: {fileID: 2657217503262007728, guid: ceb84d01937f5f744b229319b4a6a8cd,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.12665012
+      objectReference: {fileID: 0}
+    - target: {fileID: 2657217503262007728, guid: ceb84d01937f5f744b229319b4a6a8cd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 19.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2657217503262007728, guid: ceb84d01937f5f744b229319b4a6a8cd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 181
+      objectReference: {fileID: 0}
+    - target: {fileID: 2657217503262007728, guid: ceb84d01937f5f744b229319b4a6a8cd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 86.59
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ceb84d01937f5f744b229319b4a6a8cd, type: 3}
+--- !u!4 &1146991621828310952 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2657217503262007728, guid: ceb84d01937f5f744b229319b4a6a8cd,
+    type: 3}
+  m_PrefabInstance: {fileID: 3101497933125457432}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &9068464806592830390
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1323,6 +1399,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Smoke_bomb_partical_to_Fazant
+      objectReference: {fileID: 0}
+    - target: {fileID: 1149371805743134406, guid: ed15d9bbe06b29a4587cb8d8e14915ae,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5910914521430210444, guid: ed15d9bbe06b29a4587cb8d8e14915ae,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5910914522176360402, guid: ed15d9bbe06b29a4587cb8d8e14915ae,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5910914522430355120, guid: ed15d9bbe06b29a4587cb8d8e14915ae,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 6932921427270904285, guid: ed15d9bbe06b29a4587cb8d8e14915ae,
         type: 3}
@@ -1405,6 +1501,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Smoke_bomb_partical_to_monkey
       objectReference: {fileID: 0}
+    - target: {fileID: 437435981398398144, guid: c7f5b2874a3068544a3fa672bcfc6e88,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 525922779728482764, guid: c7f5b2874a3068544a3fa672bcfc6e88,
         type: 3}
       propertyPath: m_RootOrder
@@ -1460,6 +1561,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6563643203158096012, guid: c7f5b2874a3068544a3fa672bcfc6e88,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6563643204005757138, guid: c7f5b2874a3068544a3fa672bcfc6e88,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6563643204288526768, guid: c7f5b2874a3068544a3fa672bcfc6e88,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7f5b2874a3068544a3fa672bcfc6e88, type: 3}
 --- !u!198 &4210919894422224683 stripped
@@ -1485,6 +1601,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Smoke_bomb_partical_to_momo_
+      objectReference: {fileID: 0}
+    - target: {fileID: 460226454482734913, guid: f2e5ce68f87af32428ec22d28d0b8fd1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 2805543608491682195, guid: f2e5ce68f87af32428ec22d28d0b8fd1,
         type: 3}
@@ -1546,10 +1667,20 @@ PrefabInstance:
       propertyPath: playOnAwake
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6443790505838509810, guid: f2e5ce68f87af32428ec22d28d0b8fd1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 6443790505838509823, guid: f2e5ce68f87af32428ec22d28d0b8fd1,
         type: 3}
       propertyPath: playOnAwake
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6443790505991227280, guid: f2e5ce68f87af32428ec22d28d0b8fd1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 6443790505991227282, guid: f2e5ce68f87af32428ec22d28d0b8fd1,
         type: 3}
@@ -1560,6 +1691,11 @@ PrefabInstance:
         type: 3}
       propertyPath: playOnAwake
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6443790507121788588, guid: f2e5ce68f87af32428ec22d28d0b8fd1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2e5ce68f87af32428ec22d28d0b8fd1, type: 3}
