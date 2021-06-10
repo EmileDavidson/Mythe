@@ -30,7 +30,7 @@ public class EnemyController : MonoBehaviour
     private void FixCharacterFollow()
     {
         if (playerSwitcher == null) return;
-        print("OMFG");
+       // print("OMFG");
         _target = playerSwitcher.GetCurrentPlayer().transform;
     }
 

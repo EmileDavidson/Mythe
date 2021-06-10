@@ -3822,6 +3822,12 @@ Transform:
   m_Father: {fileID: 1680477208}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &853225118 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4346184514098940333, guid: 2121bac490bc31d4c8059f916de72d0e,
+    type: 3}
+  m_PrefabInstance: {fileID: 2008907113}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &917855884
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8432,6 +8438,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 6352899612064982418, guid: e2d8cfe2f44816549879952f3b53ae33,
+        type: 3}
+      propertyPath: used
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6352899612079751189, guid: e2d8cfe2f44816549879952f3b53ae33,
         type: 3}
       propertyPath: m_Layer
@@ -9780,6 +9791,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 8296950259313913686, guid: 2121bac490bc31d4c8059f916de72d0e,
+        type: 3}
+      propertyPath: swordSlash
+      value: 
+      objectReference: {fileID: 853225118}
+    - target: {fileID: 8296950259313913686, guid: 2121bac490bc31d4c8059f916de72d0e,
+        type: 3}
+      propertyPath: attackRadius
+      value: 2.6
       objectReference: {fileID: 0}
     - target: {fileID: 8296950259313913686, guid: 2121bac490bc31d4c8059f916de72d0e,
         type: 3}

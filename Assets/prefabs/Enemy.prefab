@@ -78,6 +78,7 @@ GameObject:
   - component: {fileID: 4991749056029611100}
   - component: {fileID: 580044890091971444}
   - component: {fileID: -299044116236100730}
+  - component: {fileID: 9205928165013828729}
   m_Layer: 8
   m_Name: Enemy
   m_TagString: Untagged
@@ -231,6 +232,19 @@ MonoBehaviour:
   canvas: {fileID: 8296950259720110020}
   offset: {x: 0, y: 0, z: 0}
   lookCamera: {fileID: 0}
+--- !u!114 &9205928165013828729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8296950259313913683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb6729c7c90c21642a844cea663a560b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knockbackStrenght: 200
 --- !u!1 &8296950259720110016
 GameObject:
   m_ObjectHideFlags: 0
