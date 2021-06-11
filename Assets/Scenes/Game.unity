@@ -9787,6 +9787,11 @@ PrefabInstance:
       propertyPath: offset.y
       value: 27.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8296950259313913682, guid: 2121bac490bc31d4c8059f916de72d0e,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8296950259313913683, guid: 2121bac490bc31d4c8059f916de72d0e,
         type: 3}
       propertyPath: m_Name
