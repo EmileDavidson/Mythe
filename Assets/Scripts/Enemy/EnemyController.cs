@@ -11,6 +11,8 @@ public class EnemyController : MonoBehaviour
     private float _attackCooldown = 0f;
     [SerializeField] private float attackSpeed = 1f;
 
+    public Animator animator;
+
     [SerializeField] private GameObject swordSlash;
 
     private Transform _target;
@@ -50,10 +52,12 @@ public class EnemyController : MonoBehaviour
         if(distance <= lookRadius)
         {
             agent.SetDestination(_target.position);
+            animator.SetBool("IsWalking", true);
             
             if(distance <= agent.stoppingDistance)
             {
                 FaceTarget();
+                animator.SetBool("IsWalking", false);
             }
         }
     }
@@ -65,7 +69,12 @@ public class EnemyController : MonoBehaviour
             if (_attackCooldown <= 0)
             {
                 StartCoroutine(Slash());
+                animator.SetBool("IsAttacking", true);
                 _attackCooldown = 1f / attackSpeed;
+            }
+            else
+            {
+                animator.SetBool("IsAttacking", false);
             }
         }
     }
