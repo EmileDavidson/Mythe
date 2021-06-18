@@ -1980,6 +1980,7 @@ MonoBehaviour:
   controller: {fileID: 8998443463183994936}
   anim: {fileID: 8998443463183994931}
   footstep: {fileID: 308204000726337205}
+  isGrounded: 0
   lastLandPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &1523778532131619165
 MonoBehaviour:

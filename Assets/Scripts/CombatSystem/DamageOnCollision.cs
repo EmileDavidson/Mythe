@@ -26,14 +26,12 @@ public class DamageOnCollision : MonoBehaviour
 
    private void OnTriggerEnter(Collider other)
    {
-      Debug.Log("TRIGGER");
       if (!_active) return;
       Damage(other.gameObject);
    }
 
    private void OnCollisionEnter(Collision other)
    {
-      print("COLLISION!");
       if (!_active) return;
       Damage(other.gameObject);
    }
