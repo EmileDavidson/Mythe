@@ -34366,6 +34366,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3152533854021918877, guid: 7c50a12346094f34bb3032529056e983,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 0.005
+      objectReference: {fileID: 0}
     - target: {fileID: 5762593419413753884, guid: 7c50a12346094f34bb3032529056e983,
         type: 3}
       propertyPath: maxDamage
