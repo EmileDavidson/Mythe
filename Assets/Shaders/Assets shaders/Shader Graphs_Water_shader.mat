@@ -33,7 +33,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Wave_height_: 0.03
+    - Wave_height_: 10
     - Wave_strangth_: 1
     - depth_water: 5.29
     - strangth_water: 2
