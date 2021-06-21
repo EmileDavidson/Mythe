@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-[Serializable] public class MyUnityFloatEvent : UnityEvent <int> {}
+[Serializable] public class MyUnityIntEvent : UnityEvent <int> {}
 
 public class Health : MonoBehaviour
 {
@@ -12,38 +12,37 @@ public class Health : MonoBehaviour
     public int maxHealth;
     public int startHealth;
 
-    public UnityEvent<int> RemoveHealthEvent;
-    public UnityEvent<int> AddHealthEvent;
+    public UnityEvent<int> OnRemoveHealth = new MyUnityIntEvent();
+    public UnityEvent<int> OnAddHealth = new MyUnityIntEvent();
+    public UnityEvent<int> OnHealthChanged = new MyUnityIntEvent();
 
     public UnityEvent dieEvent;
     private void Awake()
     {
         health = startHealth;
         if (maxHealth < startHealth) maxHealth = startHealth;
-
-        if (RemoveHealthEvent == null) RemoveHealthEvent = new MyUnityFloatEvent();
-        if (AddHealthEvent == null) AddHealthEvent = new MyUnityFloatEvent();
     }
 
     public void RemoveHealth(int value)
     {
-        value = (int) value;
         int newHealth = health - value;
         if (newHealth <= 0) newHealth = 0;
         health = newHealth;
         if(health <= 0) { dieEvent.Invoke(); }
         Debug.Log("new hp: " + health);
-        RemoveHealthEvent?.Invoke(value);
+        OnRemoveHealth?.Invoke(value);
+        
+        OnHealthChanged.Invoke(health);
     }
 
     public void AddHealth(int value)
     {
-        value = (int) value;
-        
         int newHealth = health + value;
         if (newHealth >= maxHealth) newHealth = maxHealth;
         health = newHealth;
-        AddHealthEvent.Invoke(value);
+        OnAddHealth.Invoke(value);
+        
+        OnHealthChanged.Invoke(health);
     }
 
     public void DestroyThisObject()

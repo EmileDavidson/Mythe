@@ -18,7 +18,7 @@ public class DamageDisplayer : MonoBehaviour
     void Start()
     {
         _health = gameObject.GetComponent<Health>();
-        _health.RemoveHealthEvent?.AddListener(TakeDamage);
+        _health.OnRemoveHealth?.AddListener(TakeDamage);
         if (lookCamera == null) lookCamera = Camera.main;
     }
 

@@ -23,7 +23,7 @@ public class Healthbar : MonoBehaviour
         }
         SetMaxHealth(health.maxHealth);
         // _health.RemoveHealthEvent.AddListener(SetMaxHealth(_health.health));
-        health.RemoveHealthEvent.AddListener((int value)=>
+        health.OnRemoveHealth.AddListener((int value)=>
         {
             //we dont want to get value what equals damage value. but we want the new health.
             SetHealth(health.health);
