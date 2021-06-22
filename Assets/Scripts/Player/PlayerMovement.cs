@@ -142,4 +142,9 @@ public class PlayerMovement : MonoBehaviour
     {
         footstep.Play();
     }
+
+    public void CanMove(int value)
+    {
+        _canMove = value == 0 ? true : false;
+    }
 }

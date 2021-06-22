@@ -1,5 +1,10 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Scenes/Game/EnemyPolishTest.unity.meta
 guid: 941275a1e69844541a662b8d4d0d5573
+=======
+guid: a4f91b547b9bd324ab3338c9287cb000
+folderAsset: yes
+>>>>>>> Development:Assets/Sounds.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

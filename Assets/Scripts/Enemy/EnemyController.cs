@@ -19,11 +19,19 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private PlayerSwitcher playerSwitcher;
     [SerializeField] private NavMeshAgent agent;
 
+    private bool _canWalk = true;
+
+    public bool CanWalk
+    {
+        get => _canWalk;
+        set => _canWalk = value;
+    }
+
 
     void Start()
     {
-        // target = PlayerManager.Instance.player.transform;
         agent = GetComponent<NavMeshAgent>();
+        swordSlash.SetActive(false);
         //find the player
         if (playerSwitcher == null) playerSwitcher = FindObjectOfType<PlayerSwitcher>();
     }
@@ -31,14 +39,13 @@ public class EnemyController : MonoBehaviour
     private void FixCharacterFollow()
     {
         if (playerSwitcher == null) return;
-        // print("OMFG");
         _target = playerSwitcher.GetCurrentPlayer().transform;
     }
 
     void Update()
     {
         FixCharacterFollow();
-
+        
         float distance = Vector3.Distance(_target.position, transform.position);
         _attackCooldown -= Time.deltaTime;
 
@@ -48,20 +55,22 @@ public class EnemyController : MonoBehaviour
 
     private void Look(float distance)
     {
-        if (distance <= lookRadius)
+        if (!_canWalk)
+        {
+            //we cant walk
+            agent.SetDestination(this.transform.position);
+            return;
+        }
+        if(distance <= lookRadius)
         {
             agent.SetDestination(_target.position);
             animator.SetBool("IsWalking", true);
-
-            if (distance <= agent.stoppingDistance)
+            
+            if(distance <= agent.stoppingDistance)
             {
                 FaceTarget();
                 animator.SetBool("IsWalking", false);
             }
-        }
-        else if (distance > lookRadius)
-        {
-            animator.SetBool("IsWalking", false);
         }
     }
 
@@ -73,7 +82,6 @@ public class EnemyController : MonoBehaviour
             {
                 animator.SetBool("IsAttacking", true);
                 _attackCooldown = 1f / attackSpeed;
-                Damage(25);
             }
             else
             {
@@ -93,11 +101,6 @@ public class EnemyController : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, lookRadius);
-        Gizmos.DrawWireSphere(swordSlash.transform.position, attackRadius);
-    }
-
-    private void Damage(int damage)
-    {
-        
+        Gizmos.DrawWireSphere(transform.position, attackRadius);
     }
 }

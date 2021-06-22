@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 125938439661375591}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.000061752326, y: -0.00457, z: 0.0012404633}
+  m_LocalPosition: {x: 0.000061752326, y: 0.0005, z: 0.0012404633}
   m_LocalScale: {x: 0.001, y: 0.001, z: 0.001}
   m_Children: []
   m_Father: {fileID: 3722165359786770564}
@@ -1030,7 +1030,6 @@ GameObject:
   - component: {fileID: -3517993364603364097}
   - component: {fileID: 1892054513196556305}
   - component: {fileID: 6497831534310120282}
-  - component: {fileID: 5029541151703767008}
   - component: {fileID: -3737066527949364309}
   - component: {fileID: -5678516991597281553}
   m_Layer: 9
@@ -1121,7 +1120,7 @@ CharacterController:
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0.001, z: 0}
+  m_Center: {x: 0, y: 0.0058, z: 0}
 --- !u!114 &-3517993364603364097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1174,19 +1173,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!65 &5029541151703767008
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4101680848886733374}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.010000011, y: 0.015379397, z: 0.010000011}
-  m_Center: {x: 0, y: 0.002689679, z: 0}
 --- !u!82 &-3737066527949364309
 AudioSource:
   m_ObjectHideFlags: 0
