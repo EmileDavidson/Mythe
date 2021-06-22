@@ -28,13 +28,15 @@ public class DamageOnCollision : MonoBehaviour
    {
       if (!_active) return;
       Damage(other.gameObject);
-   }
+
+    }
 
    private void OnCollisionEnter(Collision other)
    {
       if (!_active) return;
       Damage(other.gameObject);
-   }
+
+    }
    
    private void Damage(GameObject target)
    {
