@@ -293,28 +293,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   material:
   - {fileID: 6271573414225017425, guid: 2706d92881290db479acd9fcfb637bc9, type: 3}
-  - {fileID: 2938386062638023364, guid: 6f4dfb6806583c2438b5b8e8fafe9601, type: 3}
---- !u!1 &857023523 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8856254549033903817, guid: 8758fefca98513541b0082b00e6971b3,
+  - {fileID: 2100000, guid: 8dd0f0e13bfeb4047a9f037d827a7df7, type: 2}
+  health: {fileID: 857023526}
+--- !u!114 &857023526 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5513898580637556166, guid: 8758fefca98513541b0082b00e6971b3,
     type: 3}
   m_PrefabInstance: {fileID: 1873715610}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &857023532
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 857023523}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8677e7fc71a33af48939b216ed46be7b, type: 3}
+  m_Script: {fileID: 11500000, guid: 9427dc9be4b17f64c88466a4829c7724, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  material:
-  - {fileID: 6271573414225017425, guid: 2706d92881290db479acd9fcfb637bc9, type: 3}
-  - {fileID: 2938386062638023364, guid: 6f4dfb6806583c2438b5b8e8fafe9601, type: 3}
 --- !u!1 &1441811908
 GameObject:
   m_ObjectHideFlags: 0
@@ -563,6 +555,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8856254550293931018, guid: 8758fefca98513541b0082b00e6971b3,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8856254550293931018, guid: 8758fefca98513541b0082b00e6971b3,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8856254550774150746, guid: 8758fefca98513541b0082b00e6971b3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2288360385994246433, guid: 8758fefca98513541b0082b00e6971b3, type: 3}

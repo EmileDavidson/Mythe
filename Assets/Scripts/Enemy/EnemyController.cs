@@ -82,6 +82,7 @@ public class EnemyController : MonoBehaviour
             {
                 animator.SetBool("IsAttacking", true);
                 _attackCooldown = 1f / attackSpeed;
+                Damage(25);
             }
             else
             {
@@ -102,5 +103,11 @@ public class EnemyController : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, lookRadius);
         Gizmos.DrawWireSphere(transform.position, attackRadius);
+    }
+    private void Damage(int damage)
+    {
+        GameObject player = playerSwitcher.GetCurrentPlayer();
+        Health playerHealth = player.GetComponent<Health>();
+        playerHealth.RemoveHealth(damage);
     }
 }

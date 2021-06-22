@@ -7,6 +7,7 @@ public class ChangeMaterial : MonoBehaviour
 
     public Material[] material;
     Renderer rend;
+    [SerializeField]Health health;
 
     // Start is called before the first frame update
     void Start()
@@ -14,20 +15,21 @@ public class ChangeMaterial : MonoBehaviour
         rend = GetComponent<Renderer>();
         rend.enabled = true;
         rend.sharedMaterial = material[0];
-
+        if (health == null) health = gameObject.GetComponent<Health>();
+        
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey("space"))
-        {
-            rend.sharedMaterial = material[1];
-        }
-        else
-        {
-            rend.sharedMaterial = material[0];
-        }
+        health.OnRemoveHealth?.AddListener(value => { StartCoroutine("CChange"); });
+    }
+
+    private IEnumerator CChange()
+    {
+        rend.sharedMaterial = material[1];
+        yield return new WaitForSeconds(0.5f);
+        rend.sharedMaterial = material[0];
     }
 }
