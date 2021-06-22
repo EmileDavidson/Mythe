@@ -17,6 +17,8 @@ public class Health : MonoBehaviour
     public UnityEvent<int> OnHealthChanged = new MyUnityIntEvent();
 
     public UnityEvent dieEvent;
+
+    public bool canTakeDamage = true;
     private void Awake()
     {
         health = startHealth;
@@ -25,6 +27,8 @@ public class Health : MonoBehaviour
 
     public void RemoveHealth(int value)
     {
+        if (!canTakeDamage) return;
+        
         int newHealth = health - value;
         if (newHealth <= 0) newHealth = 0;
         health = newHealth;

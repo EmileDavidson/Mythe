@@ -19,10 +19,17 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private PlayerSwitcher playerSwitcher;
     [SerializeField] private NavMeshAgent agent;
 
+    private bool _canWalk = true;
+
+    public bool CanWalk
+    {
+        get => _canWalk;
+        set => _canWalk = value;
+    }
+
 
     void Start()
     {
-        // target = PlayerManager.Instance.player.transform;
         agent = GetComponent<NavMeshAgent>();
         swordSlash.SetActive(false);
         //find the player
@@ -32,7 +39,6 @@ public class EnemyController : MonoBehaviour
     private void FixCharacterFollow()
     {
         if (playerSwitcher == null) return;
-       // print("OMFG");
         _target = playerSwitcher.GetCurrentPlayer().transform;
     }
 
@@ -49,6 +55,12 @@ public class EnemyController : MonoBehaviour
 
     private void Look(float distance)
     {
+        if (!_canWalk)
+        {
+            //we cant walk
+            agent.SetDestination(this.transform.position);
+            return;
+        }
         if(distance <= lookRadius)
         {
             agent.SetDestination(_target.position);

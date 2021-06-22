@@ -9,9 +9,22 @@ public class PlayerCombatController : MonoBehaviour
 {
     public List<AttackBase> attacks = new List<AttackBase>();
     public AttackBase currentAttack;
-
+    public Animator animator;
+    private static readonly int Hurt = Animator.StringToHash("hurt");
+    private Health _health;
     private void Start()
     {
+        if (animator == null) animator = GetComponent<Animator>();
+        if (_health == null) _health = GetComponent<Health>();
+        if (_health != null)
+        {
+            if (animator != null)
+            {
+                _health.OnHealthChanged.AddListener(value => SetHurt(true));
+            }
+        }
+
+        
         currentAttack = attacks[0];
     }
 
@@ -22,6 +35,11 @@ public class PlayerCombatController : MonoBehaviour
         {
             currentAttack.Use();
         }
+
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            _health.RemoveHealth(10);
+        }
     }
 
     public void CheckCombo()
@@ -30,6 +48,15 @@ public class PlayerCombatController : MonoBehaviour
     }
 
 
-    
-    
+    public void SetHurt(int value)
+    {
+        animator.SetBool(Hurt, value == 0);
+    }
+
+    public void SetHurt(bool value)
+    {
+        animator.SetBool(Hurt, value);
+    }
+
+
 }
