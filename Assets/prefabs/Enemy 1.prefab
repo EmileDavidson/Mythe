@@ -182,11 +182,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lookRadius: 7.23
   attackRadius: 2.5
-  attackSpeed: 0.5
+  cooldown: 0.5
   animator: {fileID: 703420099314533581}
   swordSlash: {fileID: 1947767581232345485}
   playerSwitcher: {fileID: 0}
   agent: {fileID: 0}
+  damage: 5
 --- !u!114 &5513898580637556166
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -216,6 +217,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  canTakeDamage: 1
 --- !u!114 &130524241435142894
 MonoBehaviour:
   m_ObjectHideFlags: 0

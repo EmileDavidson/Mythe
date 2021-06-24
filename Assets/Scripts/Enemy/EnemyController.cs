@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour
@@ -8,8 +6,9 @@ public class EnemyController : MonoBehaviour
 
     [SerializeField] private float lookRadius = 10f;
     [SerializeField] private float attackRadius = 2.5f;
+    
     private float _attackCooldown = 0f;
-    [SerializeField] private float attackSpeed = 1f;
+    [SerializeField] private float cooldown = 2.5f;
 
     public Animator animator;
 
@@ -18,6 +17,8 @@ public class EnemyController : MonoBehaviour
     private Transform _target;
     [SerializeField] private PlayerSwitcher playerSwitcher;
     [SerializeField] private NavMeshAgent agent;
+
+    [SerializeField] private int damage = 5;
 
     private bool _canWalk = true;
 
@@ -47,10 +48,13 @@ public class EnemyController : MonoBehaviour
         FixCharacterFollow();
         
         float distance = Vector3.Distance(_target.position, transform.position);
-        _attackCooldown -= Time.deltaTime;
+        
+        //check if we can attack
+        if (IsInAttackRadius(distance)) _attackCooldown += Time.deltaTime;
+        else _attackCooldown = 0; 
 
         Look(distance);
-        Attack(distance);
+        Attack(distance);    
     }
 
     private void Look(float distance)
@@ -74,15 +78,20 @@ public class EnemyController : MonoBehaviour
         }
     }
 
+    public bool IsInAttackRadius(float distance)
+    {
+        return (distance <= agent.stoppingDistance);
+    }
+
     private void Attack(float distance)
     {
         if (distance <= attackRadius)
         {
-            if (_attackCooldown <= 0)
+            if (_attackCooldown >= cooldown)
             {
                 animator.SetBool("IsAttacking", true);
-                _attackCooldown = 1f / attackSpeed;
-                Damage(25);
+                _attackCooldown = 0;
+                Damage(damage);
             }
             else
             {

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.PlayerLoop;
+﻿using UnityEngine;
 
 public abstract class AttackBase : MonoBehaviour
 {
@@ -17,6 +13,7 @@ public abstract class AttackBase : MonoBehaviour
     
     public abstract void Use();
     public virtual void ComboCheck(){}
+
 
     public void Update()
     {

@@ -14982,6 +14982,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8856254549033903820, guid: 8758fefca98513541b0082b00e6971b3,
         type: 3}
+      propertyPath: cooldown
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8856254549033903820, guid: 8758fefca98513541b0082b00e6971b3,
+        type: 3}
       propertyPath: lookRadius
       value: 15.04
       objectReference: {fileID: 0}

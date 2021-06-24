@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Net.Http.Headers;
+﻿using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class PlayerSwitcher : MonoBehaviour
 {

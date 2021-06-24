@@ -1,8 +1,6 @@
 ﻿using System.Collections.Generic;
 using TweenMachine;
 using UnityEngine;
-using Debug = UnityEngine.Debug;
-using Random = UnityEngine.Random;
 
 public class Tornado : AttackBase
 {

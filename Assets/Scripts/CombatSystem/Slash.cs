@@ -25,8 +25,12 @@ public class Slash : AttackBase
 
     public override void Use()
     {
-        //fixing that animation has a small delay. an it goes to 2 before playing the animation. 
+        //bugg fix (make sure to check if we are still in the combo)        
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("idle")) Idle();
+        //check if we are in the idle animation
         if (_comboCount == 0 && !animator.GetCurrentAnimatorStateInfo(0).IsName("idle")) return;
+        
+        //standard logic for attack and combo start.
         if (!canClick) return;
         _comboCount++;
         if (_comboCount == 1)
@@ -60,6 +64,7 @@ public class Slash : AttackBase
 
     private void Idle()
     {
+        print("idle");
         animator.SetInteger(Animation, 0);
         _comboCount = 0;
         canClick = true;
