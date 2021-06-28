@@ -9,6 +9,7 @@ public class PlayerRotation : MonoBehaviour
 
     private void Update()
     {
+        if (PauseController.Instance.Paused) return;
         //prob not gonna use the Y direction for player.
         _mouseX = Input.GetAxis("Mouse X");
         _mouseY = Input.GetAxis("Mouse Y");

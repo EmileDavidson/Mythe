@@ -1,6 +1,9 @@
 ﻿using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using Cinemachine;
+using UnityEditor.Build;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerSwitcher : MonoBehaviour
 {
@@ -13,6 +16,8 @@ public class PlayerSwitcher : MonoBehaviour
     [SerializeField] private float cooldown;
     [SerializeField] private float currentTime;
     [SerializeField] private bool switched = false;
+
+    public UnityEvent allPlayersDied = new UnityEvent();
     private void Start()
     {
         //disable all players an enable current player.
@@ -43,12 +48,55 @@ public class PlayerSwitcher : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.UpArrow)) SwitchPlayerTo(_currentPlayer + 1);
     }
 
+    private bool IsPlayerAlive()
+    {
+        for (int i = 0; i < players.Count; i++)
+        {
+            if (players[i].GetComponent<Health>().health > 0) return true;
+        }
+
+        return false;
+    }
+
     private void SwitchPlayerTo(int newPlayer)
     {
-        //making sure the player exists
+        //check if there is a player alive.
+        if (!IsPlayerAlive())
+        {
+            NoAlivePlayerFound();
+            return;
+        }
+        
+        //making sure the player exists and isn't dead
         if (newPlayer > players.Count - 1) newPlayer = 0;
         if (newPlayer < 0) newPlayer = players.Count - 1;
 
+        //IF PLAYER IS DEAD CHECK FOR OTHER PLAYER 
+        if (players[newPlayer].GetComponent<Health>().health <= 0)
+        {
+            //player is dead. find first new one
+            for (int i = 0; i < players.Count; i++)
+            {
+                if (players[i].GetComponent<Health>().health <= 0) continue;
+                newPlayer = i;
+            }
+        }
+        
+        FixPlayerInfo(newPlayer);
+    }
+
+    public void SwitchPlayerToNext()
+    {
+        SwitchPlayerTo(_currentPlayer + 1);
+    }
+
+    private void NoAlivePlayerFound()
+    {
+        allPlayersDied.Invoke();
+    }
+
+    private void FixPlayerInfo(int newPlayer)
+    {
         //fixing camera position and new player position.
         players[newPlayer].gameObject.transform.position = players[_currentPlayer].transform.position;
         cinemachineCamera.Follow = players[newPlayer].transform;

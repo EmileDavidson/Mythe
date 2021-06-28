@@ -1,22 +1,30 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class MouseLock : MonoBehaviour
 {
-    public bool paused = false;
+    [SerializeField] private bool cursorVisibility = true;
+    [SerializeField] private CursorLockMode lockMode = CursorLockMode.Locked;
 
+
+    private void Start()
+    {
+        Cursor.lockState = lockMode;
+        Cursor.visible = cursorVisibility;
+    }
 
     // Update is called once per frame
-    void Update()
+    public void SetVisibility(bool value)
     {
-        if (!paused)
-        {
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-        }
-        else
-        {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-        }
+        cursorVisibility = value;
+        Cursor.visible = cursorVisibility;
+    }
+
+    public void SetLockMode(CursorLockMode value)
+    {
+        lockMode = value;
+        Cursor.lockState = lockMode;
     }
 }
+
+
