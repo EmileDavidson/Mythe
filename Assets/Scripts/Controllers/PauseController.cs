@@ -35,12 +35,11 @@ public class PauseController : MonoBehaviour
    [SerializeField] private bool paused;
    [SerializeField] private bool canPause = true;
    [SerializeField] private bool unPauseOnStart = true;
+   [SerializeField] private bool hideMouseOnStart = false;
     
    public UnityEvent onPauseChange = new UnityEvent();
    public UnityEvent onPause = new UnityEvent();
    public UnityEvent onPlay = new UnityEvent();
-
-   public MouseLock mouseLocker;
 
    //getters setters
    public bool Paused
@@ -65,14 +64,14 @@ public class PauseController : MonoBehaviour
    {
       if (paused)
       {
-         mouseLocker.SetVisibility(true);
-         mouseLocker.SetLockMode(CursorLockMode.None);
+         Cursor.visible = true;
+         Cursor.lockState = CursorLockMode.None;
          Time.timeScale = 0;
          onPause.Invoke();
          return;
       }
-      mouseLocker.SetVisibility(false);
-      mouseLocker.SetLockMode(CursorLockMode.Locked);
+      Cursor.visible = false;
+      Cursor.lockState = CursorLockMode.Locked;
       Time.timeScale = 1;
       onPlay.Invoke();
    }
@@ -80,14 +79,19 @@ public class PauseController : MonoBehaviour
    //hulp functions
    public void LockMouse()
    {
-      mouseLocker.SetVisibility(false);
-      mouseLocker.SetLockMode(CursorLockMode.Locked);
+      Cursor.visible = false;
+      Cursor.lockState = CursorLockMode.Locked;
    }
 
    public void UnlockMouse()
    {
-      mouseLocker.SetVisibility(true);
-      mouseLocker.SetLockMode(CursorLockMode.None);
+      Cursor.visible = true;
+      Cursor.lockState = CursorLockMode.None;
+   }
+
+   public void SetTimeScale(float value)
+   {
+      Time.timeScale = value;
    }
 
    //event functions
@@ -95,6 +99,10 @@ public class PauseController : MonoBehaviour
    {
       onPauseChange.AddListener(PauseChanged);
       if (unPauseOnStart) Paused = false;
+      
+      //lock or unlock mouse on start.
+      if(hideMouseOnStart) LockMouse();
+      else UnlockMouse();
    }
 
    private void Update()

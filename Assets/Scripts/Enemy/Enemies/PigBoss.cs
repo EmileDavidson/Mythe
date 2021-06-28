@@ -7,6 +7,7 @@ using Random = UnityEngine.Random;
 public class PigBoss : MonoBehaviour
 {
     //special move 
+    [SerializeField] private bool specialMoveUsed = false;
     public UnityEvent onSpecialMove = new UnityEvent();
     public UnityEvent onSpecialMoveFinish = new UnityEvent();
     [SerializeField] private List<Transform> specialMoveHitLocations = new List<Transform>();
@@ -21,6 +22,7 @@ public class PigBoss : MonoBehaviour
     [SerializeField] private Vector3 spawnOffsetFromPlayer = new Vector3(0, 20, 0);
         
     [SerializeField] private Health health;
+    
 
     private void Start()
     {
@@ -34,16 +36,17 @@ public class PigBoss : MonoBehaviour
     
 
     //trigger special move at 30% of hp
-    private void SpecialMove()
-    {
-     onSpecialMove.Invoke();
-     health.canTakeDamage = false;
-     //let rock fall out of the sky on the player and random positions on defined locations.
-     StartCoroutine(SpawnFalingObjects());
+    private void SpecialMove() { 
+        if (specialMoveUsed) return;
+        onSpecialMove.Invoke();
+        health.canTakeDamage = false;
+        //let rock fall out of the sky on the player and random positions on defined locations.
+        StartCoroutine(SpawnFalingObjects());
     }
 
     private void FinishSpecialMove()
     {
+        specialMoveUsed = true;
         health.canTakeDamage = true;
         onSpecialMoveFinish.Invoke();
     }

@@ -18,6 +18,10 @@ public class FloatingText : MonoBehaviour
             Random.Range(-RandomizeIntensity.z, + RandomizeIntensity.z));
     }
 
+    
+    /// <summary>
+    /// make sure this gameobject looks at the camera at all time. 
+    /// </summary>
     private void Update()
     {
         transform.rotation = Quaternion.LookRotation(transform.position - lookAtTrans.position);

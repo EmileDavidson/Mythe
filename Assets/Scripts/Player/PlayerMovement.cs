@@ -68,6 +68,9 @@ public class PlayerMovement : MonoBehaviour
         Animate();
     }
 
+    /// <summary>
+    /// get input an change the moveDirection to right values!
+    /// </summary>
     private void Move()
     {
         if (_canMove == false) return;
@@ -81,6 +84,9 @@ public class PlayerMovement : MonoBehaviour
         moveDirection.z *= speed;
     }
 
+    /// <summary>
+    /// jump logic 
+    /// </summary>
     private void Jump()
     {
         moveDirection.y = jumpSpeed;
@@ -88,6 +94,9 @@ public class PlayerMovement : MonoBehaviour
         jumpCount++;
     }
 
+    /// <summary>
+    /// check if we are grounded by using a raycast. it might be better to use sphere cast but that is for later.
+    /// </summary>
     private void IsGroundedCheck()
     {
         //custom is grounded check for when you move off a cliff.
@@ -104,6 +113,11 @@ public class PlayerMovement : MonoBehaviour
         OnWaterCollision(ray, hit);
     }
 
+    /// <summary>
+    /// OnWaterCollision do we hit the water? triggered in groundcheck
+    /// </summary>
+    /// <param name="ray">the raycast used for ground check</param>
+    /// <param name="hit">what the raycast hits</param>
     private void OnWaterCollision(bool ray, RaycastHit hit)
     {
         if (ray)
@@ -123,6 +137,9 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// animate the walking! are we walking or not
+    /// </summary>
     private void Animate()
     {
         if (anim != null)
@@ -132,17 +149,27 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// check if we are grounded or not if we are we can jump again!
+    /// </summary>
     private void CheckJumpReset()
     {
         if (!isGrounded) isGrounded = controller.isGrounded; //when we arent grounded check if we are.
         if (isGrounded) jumpCount = 0;
     }
 
+    /// <summary>
+    /// plays the footstep sound
+    /// </summary>
     public void PlayFootstepSound()
     {
         footstep.Play();
     }
 
+    /// <summary>
+    /// can we move or not? (setter)
+    /// </summary>
+    /// <param name="value"></param>
     public void CanMove(int value)
     {
         _canMove = value == 0 ? true : false;

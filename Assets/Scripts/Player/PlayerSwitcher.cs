@@ -48,6 +48,7 @@ public class PlayerSwitcher : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.UpArrow)) SwitchPlayerTo(_currentPlayer + 1);
     }
 
+    //check if we have a player character that is alive.
     private bool IsPlayerAlive()
     {
         for (int i = 0; i < players.Count; i++)
@@ -58,6 +59,7 @@ public class PlayerSwitcher : MonoBehaviour
         return false;
     }
 
+    //switches the player is it not out of range? (array) an does new player have health? 
     private void SwitchPlayerTo(int newPlayer)
     {
         //check if there is a player alive.
@@ -85,16 +87,26 @@ public class PlayerSwitcher : MonoBehaviour
         FixPlayerInfo(newPlayer);
     }
 
+    /// <summary>
+    /// switch player to next used for when player dies
+    /// </summary>
     public void SwitchPlayerToNext()
     {
         SwitchPlayerTo(_currentPlayer + 1);
     }
 
+    /// <summary>
+    /// there were no alive players lose logic.. + event
+    /// </summary>
     private void NoAlivePlayerFound()
     {
         allPlayersDied.Invoke();
     }
 
+    /// <summary>
+    /// gets old an new players. and fixes all values like rotation, position, acitve or not, last land position etc..
+    /// </summary>
+    /// <param name="newPlayer">new player (from players list)</param>
     private void FixPlayerInfo(int newPlayer)
     {
         //fixing camera position and new player position.
@@ -123,6 +135,10 @@ public class PlayerSwitcher : MonoBehaviour
         switched = true;
     }
 
+    /// <summary>
+    /// gets the player you are.
+    /// </summary>
+    /// <returns>the current player.</returns>
     public GameObject GetCurrentPlayer()
     {
         return players[_currentPlayer].gameObject;

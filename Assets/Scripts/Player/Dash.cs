@@ -28,6 +28,10 @@ public class Dash : MonoBehaviour
         DoDash();
     }
 
+    
+    /// <summary>
+    /// Checks if we want to use a dash (when _keyClicked is pressed twice!)
+    /// </summary>
     void CheckDash()
     {
         if (Input.GetKeyDown(keycode)) _keyClicked++;
@@ -47,7 +51,9 @@ public class Dash : MonoBehaviour
         }
     }
     
-    
+    /// <summary>
+    /// Do the dash! we dash forward!
+    /// </summary>
     private void DoDash()
     {
         if (!isDashing) return;

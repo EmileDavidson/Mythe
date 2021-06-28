@@ -27,28 +27,30 @@ public class PlayerCombatController : MonoBehaviour
     private void Update()
     {
         if (currentAttack == null) return;
-        if (Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            currentAttack.Use();
-        }
-
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            _health.RemoveHealth(10);
-        }
+        if (Input.GetKeyDown(KeyCode.Mouse0)) currentAttack.Use();
     }
 
+    /// <summary>
+    /// CheckCombo triggers function in child. we use this for animation clip events
+    /// </summary>
     public void CheckCombo()
     {
         currentAttack.ComboCheck();
     }
 
-
+    /// <summary>
+    /// are we hurt true or false? -> set animator to state.
+    /// </summary>
+    /// <param name="value">0 = true, > 1 false</param>
     public void SetHurt(int value)
     {
         animator.SetBool(Hurt, value == 0);
     }
 
+    /// <summary>
+    /// are we hurt? -> set animator state.
+    /// </summary>
+    /// <param name="value">the bool if we are hurt or not.</param>
     public void SetHurt(bool value)
     {
         animator.SetBool(Hurt, value);
