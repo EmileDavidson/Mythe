@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -21,6 +22,10 @@ public class Health : MonoBehaviour
 
     [Header("booleans")]
     public bool canTakeDamage = true;
+
+    [Header("Invincibility")]
+    [SerializeField] private bool invincebilityOnDamage = false;
+    [SerializeField] private float invincebilityTime = 3f;
     
     private void Awake()
     {
@@ -42,6 +47,7 @@ public class Health : MonoBehaviour
         if(health <= 0) { dieEvent.Invoke(); }
         Debug.Log("new hp: " + health);
         OnRemoveHealth?.Invoke(value);
+        if (invincebilityOnDamage) StartCoroutine(SetInvincebility(invincebilityTime));
         
         OnHealthChanged.Invoke(health);
     }
@@ -66,5 +72,13 @@ public class Health : MonoBehaviour
     public void DestroyThisObject()
     {
         Destroy(this.gameObject);
+    }
+
+    public IEnumerator SetInvincebility(float time)
+    {
+        canTakeDamage = false;
+        yield return new WaitForSeconds(time);
+        canTakeDamage = true;
+        yield return null;
     }
 }

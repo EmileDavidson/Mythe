@@ -64,7 +64,6 @@ public class Slash : AttackBase
 
     private void Idle()
     {
-        print("idle");
         animator.SetInteger(Animation, 0);
         _comboCount = 0;
         canClick = true;
