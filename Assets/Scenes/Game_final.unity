@@ -40267,105 +40267,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1434821670892685124, guid: 7c50a12346094f34bb3032529056e983,
-        type: 3}
-      propertyPath: invincebilityTime
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1434821670892685124, guid: 7c50a12346094f34bb3032529056e983,
-        type: 3}
-      propertyPath: invincebilityOnDamage
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1434821670892685124, guid: 7c50a12346094f34bb3032529056e983,
-        type: 3}
-      propertyPath: dieEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1434821670892685124, guid: 7c50a12346094f34bb3032529056e983,
-        type: 3}
-      propertyPath: dieEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1434821670892685124, guid: 7c50a12346094f34bb3032529056e983,
-        type: 3}
-      propertyPath: dieEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 6352899613001051047}
-    - target: {fileID: 1434821670892685124, guid: 7c50a12346094f34bb3032529056e983,
-        type: 3}
-      propertyPath: dieEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1434821670892685124, guid: 7c50a12346094f34bb3032529056e983,
-        type: 3}
-      propertyPath: dieEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SwitchPlayerToNext
-      objectReference: {fileID: 0}
-    - target: {fileID: 1434821670892685124, guid: 7c50a12346094f34bb3032529056e983,
-        type: 3}
-      propertyPath: dieEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 1773618795369033571, guid: 7c50a12346094f34bb3032529056e983,
-        type: 3}
-      propertyPath: invincebilityTime
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1773618795369033571, guid: 7c50a12346094f34bb3032529056e983,
-        type: 3}
-      propertyPath: invincebilityOnDamage
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1773618795369033571, guid: 7c50a12346094f34bb3032529056e983,
-        type: 3}
-      propertyPath: dieEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1773618795369033571, guid: 7c50a12346094f34bb3032529056e983,
-        type: 3}
-      propertyPath: dieEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1773618795369033571, guid: 7c50a12346094f34bb3032529056e983,
-        type: 3}
-      propertyPath: dieEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 6352899613001051047}
-    - target: {fileID: 1773618795369033571, guid: 7c50a12346094f34bb3032529056e983,
-        type: 3}
-      propertyPath: dieEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1773618795369033571, guid: 7c50a12346094f34bb3032529056e983,
-        type: 3}
-      propertyPath: dieEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SwitchPlayerToNext
-      objectReference: {fileID: 0}
-    - target: {fileID: 1773618795369033571, guid: 7c50a12346094f34bb3032529056e983,
-        type: 3}
-      propertyPath: dieEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 2429420920199481672, guid: 7c50a12346094f34bb3032529056e983,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.96
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2429420920199481672, guid: 7c50a12346094f34bb3032529056e983,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.13
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3097590165809714162, guid: 7c50a12346094f34bb3032529056e983,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3152533854021918877, guid: 7c50a12346094f34bb3032529056e983,
         type: 3}
       propertyPath: m_Center.y
-      value: 0.0058
+      value: 0.001
       objectReference: {fileID: 0}
     - target: {fileID: 4084193175603083281, guid: 7c50a12346094f34bb3032529056e983,
         type: 3}
@@ -40375,22 +40295,22 @@ PrefabInstance:
     - target: {fileID: 5275608045176043373, guid: 7c50a12346094f34bb3032529056e983,
         type: 3}
       propertyPath: jumps
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5762593419413753884, guid: 7c50a12346094f34bb3032529056e983,
         type: 3}
       propertyPath: maxDamage
-      value: 100
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 5762593419413753884, guid: 7c50a12346094f34bb3032529056e983,
         type: 3}
       propertyPath: minDamage
-      value: 100
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7075521901671595347, guid: 7c50a12346094f34bb3032529056e983,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c50a12346094f34bb3032529056e983, type: 3}

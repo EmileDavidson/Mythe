@@ -19,19 +19,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &703420099314533580
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 360962020696998858}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dda573a9a1e64994da5d2ba43e352c19, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 703420099314533581}
 --- !u!1 &1947767581232345485
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,6 +79,7 @@ GameObject:
   - component: {fileID: 5513898580637556166}
   - component: {fileID: 130524241435142894}
   - component: {fileID: 8222051400863207964}
+  - component: {fileID: 5166627779417783288}
   m_Layer: 8
   m_Name: Enemy 1
   m_TagString: Untagged
@@ -218,6 +206,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   canTakeDamage: 1
+  invincebilityOnDamage: 0
+  invincebilityTime: 3
 --- !u!114 &130524241435142894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,6 +240,24 @@ MonoBehaviour:
   offset: {x: 0, y: 0, z: 0}
   floatingTextSize: {x: 0, y: 0, z: 0}
   lookCamera: {fileID: 0}
+--- !u!114 &5166627779417783288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8856254549033903817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8677e7fc71a33af48939b216ed46be7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 2100000, guid: c71c3922a9581024880699d8e176e873, type: 2}
+  startMaterial: {fileID: 6271573414225017425, guid: b45428ef5d76dab4da184fb87675b6ff,
+    type: 3}
+  changeTime: 0.1
+  health: {fileID: 5513898580637556166}
+  _renderer: {fileID: 7195469362601235083}
 --- !u!1 &8856254550100925714
 GameObject:
   m_ObjectHideFlags: 0
@@ -1292,6 +1300,12 @@ GameObject:
 --- !u!4 &1029553718824868208 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b45428ef5d76dab4da184fb87675b6ff,
+    type: 3}
+  m_PrefabInstance: {fileID: 703420099272408731}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &7195469362601235083 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -1578373571446707184, guid: b45428ef5d76dab4da184fb87675b6ff,
     type: 3}
   m_PrefabInstance: {fileID: 703420099272408731}
   m_PrefabAsset: {fileID: 0}

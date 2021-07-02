@@ -189,6 +189,9 @@ MonoBehaviour:
   cooldown: 0
   currentTime: 0
   switched: 0
+  allPlayersDied:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &213740831771892613
 GameObject:
   m_ObjectHideFlags: 0
@@ -382,6 +385,7 @@ MonoBehaviour:
   attacks:
   - {fileID: 213740830599467061}
   currentAttack: {fileID: 213740830599467061}
+  animator: {fileID: 0}
 --- !u!114 &4589661986697284753
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -400,42 +404,9 @@ MonoBehaviour:
   dieEvent:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1434821670892685124
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3097590165809714162}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9427dc9be4b17f64c88466a4829c7724, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 100
-  maxHealth: 100
-  startHealth: 100
-  dieEvent:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &1773618795369033571
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7075521901671595347}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9427dc9be4b17f64c88466a4829c7724, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 100
-  maxHealth: 100
-  startHealth: 100
-  dieEvent:
-    m_PersistentCalls:
-      m_Calls: []
+  canTakeDamage: 1
+  invincebilityOnDamage: 0
+  invincebilityTime: 3
 --- !u!1001 &56161666112170961
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -5,16 +5,18 @@ using UnityEngine;
 public class ChangeMaterial : MonoBehaviour
 {
 
-    public Material[] material;
-    Renderer rend;
+    public Material material;
+    public Material startMaterial;
+    [SerializeField] private float changeTime = .5f;
     [SerializeField]Health health;
+    [SerializeField] private Renderer _renderer;
 
     // Start is called before the first frame update
     void Start()
     {
-        rend = GetComponent<Renderer>();
-        rend.enabled = true;
-        rend.sharedMaterial = material[0];
+        if (_renderer == null) _renderer = GetComponent<Renderer>();
+        _renderer.enabled = true;
+        _renderer.sharedMaterial = startMaterial;
         if (health == null) health = gameObject.GetComponent<Health>();
         
 
@@ -23,13 +25,17 @@ public class ChangeMaterial : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        health.OnRemoveHealth?.AddListener(value => { StartCoroutine("CChange"); });
+        health.OnRemoveHealth?.AddListener(value =>
+        {
+            if (health.health <= 0) return;
+            if(_renderer != null && material != null) StartCoroutine(Change());
+        });
     }
 
-    private IEnumerator CChange()
+    private IEnumerator Change()
     {
-        rend.sharedMaterial = material[1];
-        yield return new WaitForSeconds(0.5f);
-        rend.sharedMaterial = material[0];
+        _renderer.sharedMaterial = material;
+        yield return new WaitForSeconds(changeTime);
+        _renderer.sharedMaterial = startMaterial;
     }
 }

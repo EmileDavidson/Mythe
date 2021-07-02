@@ -1824,6 +1824,7 @@ GameObject:
   - component: {fileID: 1523778532131619165}
   - component: {fileID: 5696661738870530393}
   - component: {fileID: 308204000726337205}
+  - component: {fileID: 2495788360426756382}
   m_Layer: 9
   m_Name: Momotaro-textureless
   m_TagString: Untagged
@@ -1924,6 +1925,7 @@ MonoBehaviour:
   attacks:
   - {fileID: 1523778532131619165}
   currentAttack: {fileID: 1523778532131619165}
+  animator: {fileID: 0}
 --- !u!114 &8998443463183994941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2196,6 +2198,27 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2495788360426756382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8079894746806321843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9427dc9be4b17f64c88466a4829c7724, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  maxHealth: 100
+  startHealth: 100
+  dieEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  canTakeDamage: 1
+  invincebilityOnDamage: 1
+  invincebilityTime: 2
 --- !u!1 &8109528849354545952
 GameObject:
   m_ObjectHideFlags: 0

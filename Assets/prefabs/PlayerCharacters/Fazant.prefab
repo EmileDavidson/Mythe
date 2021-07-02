@@ -1032,6 +1032,7 @@ GameObject:
   - component: {fileID: 6497831534310120282}
   - component: {fileID: -3737066527949364309}
   - component: {fileID: -5678516991597281553}
+  - component: {fileID: -4235076969234533282}
   m_Layer: 9
   m_Name: Fazant
   m_TagString: Player
@@ -1154,6 +1155,7 @@ MonoBehaviour:
   attacks:
   - {fileID: -5678516991597281553}
   currentAttack: {fileID: -5678516991597281553}
+  animator: {fileID: 0}
 --- !u!95 &6497831534310120282
 Animator:
   serializedVersion: 3
@@ -1295,6 +1297,27 @@ MonoBehaviour:
   - {fileID: 3900166991238863660}
   maxDistance: 10
   animator: {fileID: 0}
+--- !u!114 &-4235076969234533282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4101680848886733374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9427dc9be4b17f64c88466a4829c7724, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  maxHealth: 100
+  startHealth: 100
+  dieEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  canTakeDamage: 1
+  invincebilityOnDamage: 1
+  invincebilityTime: 2
 --- !u!1 &4313112602498219759
 GameObject:
   m_ObjectHideFlags: 0
